@@ -1,3 +1,28 @@
 <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)">
   
 </favorite>
+
+
+<like   
+[likesCount]="tweet.likesCount"
+[isActive]="tweet.isLiked"></like>
+
+
+
+
+
+<!-- ngSwitch -->
+<div class="mt-16 flex flex-row gap-3  ">
+
+<button (click)="role='User'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >User</button>
+<button (click)="role='Admin'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Admin</button>
+
+</div>
+
+<div [ngSwitch]="role">
+  <div *ngSwitchCase="'User'">Welcome User!</div>
+<div *ngSwitchCase="'Admin'">Welcome Admin </div>
+<div *ngSwitchDefault> </div>
+</div>
+
+

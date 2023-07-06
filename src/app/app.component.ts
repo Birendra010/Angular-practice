@@ -7,7 +7,17 @@ import { favoriteChangedEventArgs } from './favorite/favorite.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+[x: string]: any;
   title = 'Angular-practice';
+
+  role:string = "Users";
+
+tweet ={
+  body:'...',
+  likesCount:10,
+  isLiked:true
+}
+
 
   post ={
     title :'Title',
@@ -17,4 +27,9 @@ export class AppComponent {
   onFavoriteChanged(eventArgs:favoriteChangedEventArgs){
     console.log("FavoriteChanged",eventArgs)
   }
+
+
+
+
+  
 }

@@ -1,0 +1,11 @@
+
+<span  > 
+
+    <i class=" fa-heart"
+    [class.fa-solid]="isActive"
+    [class.fa-regular]="!isActive"
+    
+    (click)="onClick()"></i>
+
+</span>
+<span>{{likesCount}}</span>
