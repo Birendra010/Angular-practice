@@ -115,8 +115,24 @@
         >
       </div>
     </div>
+
+<!-- ////*****select************ -->
+<div class="form-controller flex flex-col h-16">
+    <label for="select" class="form-label">Select option</label>
+    <select name="role" required [(ngModel)]="form.role"  #role="ngModel" [ngClass]="{error:role.errors && role.touched}">
+      <option value=""></option>
+      <option value="admin">Admin</option>
+      <option value="user">User</option>
+    </select>
+  <span *ngIf="role.errors && role.touched" class="text-red-600 text-[11px]">
+      <span *ngIf="role.errors['required']"> Select role</span>
+  </span>
+  </div>
+
+
+
     <!-- /////**************Comment*********** -->
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label for="comment" class="form-label">Comments</label>
       <textarea
         type="text"
@@ -127,7 +143,7 @@
         name="comment"
         #comment="ngModel"></textarea>
     
-    </div>
+    </div> -->
     <!-- //////************Button ****** -->
     <div class="mb-3 text-center">
       <button
@@ -139,4 +155,7 @@
       </button>
     </div>
   </form>
+
+
+  <p>{{register.value | json}}</p>
 </div>
