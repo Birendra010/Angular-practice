@@ -42,19 +42,30 @@
   load Course
 </button>
  </div>
-  <ul class="bg-blue-300 text-white  mt-2 flex flex-col gap -2 items-center">
-    <li *ngFor="let course of courses; trakBy: trakCourse" class="mt-1 ">
+  <ul class="bg-blue-300 text-white  mt-2 flex flex-col gap-1 items-center ">
+    <li *ngFor="let course of courses; trakBy: trakCourse" >
       {{ course.name }}
   
       <button
         (click)="onRemove(course)"
-        class="bg-red-500 text-white font-bold py-1.5 px-2.5 rounded mt-5"
-      >
-        Remove
-      </button>
+        class="bg-red-500 text-white font-bold py-1.5 px-2.5 rounded mt-5">Remove</button>
     </li>
   </ul>
 </div>
 
+<!-- **********coustam directives*********** -->
 
 
+<input type="text" class="w-96 h-6 bg-slate-400 text-white" [appInputFormat]="'lower'"/>
+
+
+
+<!-- /////zippy component *********** -->
+
+<zippy title ="Shipping Details">
+  Shipping Details Content lore</zippy>
+
+
+  <!-- /////***********template-driven form ******* -->
+
+  <contact-form></contact-form>

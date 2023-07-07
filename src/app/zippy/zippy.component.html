@@ -1,0 +1,17 @@
+<div class="zippy">
+  <div class="zippy-heading" [class.expanded]="isExpanded" (click)="onClick()">
+    {{ title }}
+
+  
+        <i
+      class="fa-solid " 
+      [ngClass]="{
+        'fa-angle-down': !isExpanded,
+        'fa-angle-up': isExpanded
+      }"></i>
+    
+  </div>
+  <div *ngIf="isExpanded" class="zippy-body">
+    <ng-content></ng-content>
+  </div>
+</div>

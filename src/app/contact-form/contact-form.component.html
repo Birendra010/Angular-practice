@@ -1,0 +1,142 @@
+<div class="container mt-4 w-96 border border-dark">
+  <h2 class="mt-4 mb-3 text-center">REGISTATION FORM</h2>
+  <form #register="ngForm" (ngSubmit)="register.form.valid && registerFn()">
+    <!-- //////********First name  -->
+    <div class="mb-3">
+      <label for="fname" class="form-label">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fname"
+        placeholder="First Name"
+        [(ngModel)]="form.fname"
+        name="fname"
+        #fname="ngModel"
+        required minlength="3"
+        maxlength="32"
+        [ngClass]="{ error: fname.errors && fname.touched }"
+      />
+      <!-- ///first name validation -->
+      <div *ngIf="fname.errors && fname.touched">
+        <small class="text-danger" *ngIf="fname.errors['required']"
+          >First Name is required</small
+        >
+        <small class="text-danger" *ngIf="fname.errors['maxlength']"
+          >Maximum 32 characters are allowed</small
+        >
+
+        <small class="text-danger" *ngIf="fname.errors['minlength']"
+        > First name must be Minimum 3 characters </small
+      >
+      </div>
+    </div>
+    <!-- /.///////*****Last Name ****** -->
+    <div class="mb-3">
+      <label for="lname" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lname"
+        placeholder="Last Name"
+        [(ngModel)]="form.lname"
+        name="lname"
+        #lname="ngModel"
+        required
+        maxlength="22"
+        [ngClass]="{ error: lname.errors && lname.touched }"
+      />
+      <!-- ///// Last name validation -->
+      <div *ngIf="lname.errors && lname.touched">
+        <small class="text-danger" *ngIf="lname.errors['required']"
+          >Last Name is required</small
+        >
+        <small class="text-danger" *ngIf="lname.errors['maxlength']"
+          >Maximum 22 characters are allowed</small
+        >
+      </div>
+    </div>
+    <!-- ///////***********Email ************ -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        placeholder="Email"
+        [(ngModel)]="form.email"
+        name="email"
+        #email="ngModel"
+        required
+        maxlength="32"
+        [pattern]="emailRegex"
+        [ngClass]="{ error: email.errors && email.touched }"
+      />
+      <!-- ////******* Email validation  -->
+      <div *ngIf="email.errors && email.touched">
+        <small class="text-danger" *ngIf="email.errors['required']"
+          >Email is required</small
+        >
+        <small class="text-danger" *ngIf="email.errors['maxlength']"
+          >Maximum 32 characters are allowed</small
+        >
+        <small class="text-danger" *ngIf="email.errors['pattern']"
+          >Please enter a valid email.</small >
+      </div>
+    </div>
+    <!-- /////***************phone*************** -->
+    <div class="mb-3">
+      <label for="mobile" class="form-label">Mobile</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mobile"
+        placeholder="Mobile"
+        [(ngModel)]="form.mobile"
+        name="mobile"
+        #mobile="ngModel"
+        required
+        minlength="10"
+        maxlength="10"
+        [pattern]="integerRegex"
+        [ngClass]="{ error: mobile.errors && mobile.touched }" />
+      <!-- ////******* Email validation  -->
+      <div *ngIf="mobile.errors && mobile.touched">
+        <small class="text-danger" *ngIf="mobile.errors['required']"
+          >Mobile number is required</small
+        >
+        <small
+          class="text-danger"
+          *ngIf="
+            mobile.errors['pattern'] ||
+            mobile.errors['minlength'] ||
+            mobile.errors['maxlength']
+          "
+          >Please enter a valid Mobile number.</small
+        >
+      </div>
+    </div>
+    <!-- /////**************Comment*********** -->
+    <div class="mb-3">
+      <label for="comment" class="form-label">Comments</label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="comment"
+        placeholder="Comments"
+        [(ngModel)]="form.comment"
+        name="comment"
+        #comment="ngModel"></textarea>
+    
+    </div>
+    <!-- //////************Button ****** -->
+    <div class="mb-3 text-center">
+      <button
+        type="submit"
+        class="btn btn-primary bg-primary"
+        [disabled]="register.form.status === 'INVALID'"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
