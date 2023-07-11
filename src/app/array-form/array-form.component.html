@@ -1,0 +1,17 @@
+<div class="container mt-4 w-96 border border-dark">
+
+<h1 class="text-center">enter for add </h1>
+    <form>
+        <input type="text" class="container mt-8 border border-dark form-control" placeholder="enter for add" (keyup.enter)="addTopic(topic)" #topic/>
+        
+        <ul class="list-group">
+        
+        <li *ngFor="let topic of topics.controls;index as i " 
+        (click)="removeTopic(i)"
+        class="list-group-item">{{topic.value}}</li>
+        
+        
+        </ul>
+        
+        </form>
+</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UsernameValidators } from './uaername.validation';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { passwordMatch } from './password.validation';
+// import { UsernameValidators } from './uaername.validation';
 
 @Component({
   selector: 'reactive-form',
@@ -8,17 +9,34 @@ import { UsernameValidators } from './uaername.validation';
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent {
-form =new FormGroup({
-  username:new FormControl('',[
-    Validators.required,
-    Validators.minLength(3),
-    UsernameValidators.cannotContainSpace
-  ]),
-  password :new FormControl('',Validators.required)
-})
-get username(){
-  return this.form.get('username')
-}
+  integerRegex=/^\d+$/
+  emailRegex =/^[a-z0-9_]{1,}@[a-z]{3,10}[.]{1}[a-z]{3}$/
+
+
+  registerForm = new FormGroup ({
+    fname : new FormControl("",[Validators.required,Validators.maxLength(32),Validators.minLength(3)]),
+    lname : new FormControl("",[Validators.required,Validators.maxLength(15)]),
+    mobile : new FormControl("",[Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern(this.integerRegex)]),
+    email: new FormControl("",[Validators.required,Validators.pattern(this.emailRegex)]),
+    password: new FormControl("",[Validators.required ,Validators.maxLength(32),Validators.minLength(8)]) ,
+    confirm_password: new FormControl("",[Validators.required, Validators.maxLength(32),Validators.minLength(8)]) ,
+
+  },[passwordMatch("password","confirm_password")])
+
+
+
+
+  getControl(name:any):AbstractControl |null{
+    return this.registerForm.get(name)
+  }
+
+
+registerFn(){
+  console.log(this.registerForm.value)
 }
 
 
+
+
+
+}
