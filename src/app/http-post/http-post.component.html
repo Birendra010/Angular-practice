@@ -1,1 +1,26 @@
-<p>http-post works!</p>
+
+<input 
+
+(keyup.enter)="createPost(title)" #title
+type="text" class="form-control border border-primary" placeholder="enter to add ">
+
+
+<div class=" gap-1" >
+
+<div  *ngFor="let post of posts"
+class="list-group-item" ><button (click)="deletePost(post)"
+class="btn btn-primary">Delete</button>
+<!-- {{post.title}} -->
+
+<!-- <div *ngFor="let post of posts" -->
+<!-- class="list-group-item"> -->
+<button (click)="updatePost(post)"
+class="btn btn-primary ml-5 mt-2">Update</button>
+{{post.title}}
+<!-- </div> -->
+
+
+</div>
+
+
+

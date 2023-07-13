@@ -12,10 +12,11 @@ export class LikeComponent {
   likesCount!: number;
   @Input('isActive')
   isActive!: boolean;
+tweet: any;
 
 
 onClick(){
-  this.likesCount +=(this.likesCount) ? -1:1;
+  this.likesCount = this.isActive ? 0 : 1;
   this.isActive =!this.isActive; 
 }
 

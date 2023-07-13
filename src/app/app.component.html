@@ -1,10 +1,69 @@
+
+<header>
+  <nav>
+    <ul class=" flex flex-row gap-3  fs-6  h-12 text-white bg-slate-700 text-decoration-underline ">
+
+      <li class="mt-2.5">
+        <a routerLink="**">Home</a>
+      </li>
+
+      <li class="mt-2.5">
+        <a routerLink="reactive-Form">Reactive-Form</a>
+      </li>
+
+      <li  class="mt-2.5">
+        <a routerLink="array-form">Array-Form</a>
+      </li  >
+      <li class ="mt-2.5">
+        <a routerLink="contact-form">Contact-form</a>
+      </li >
+      <li  class="mt-2.5">
+        <a routerLink="like">Like</a>
+      </li>
+      <li  class="mt-2.5">
+        <a routerLink="changePassword">changePassword</a>
+      </li>
+      <li  class="mt-2.5">
+        <a routerLink="favorite">Favorite</a>
+      </li>
+      <li  class="mt-2.5">
+        <a routerLink="http-post">Http</a>
+      </li>
+
+      <li  class="mt-2.5">
+        <a routerLink="zippy">Zippy</a>
+      </li>
+      <li  class="mt-2.5">
+        <a routerLink="GitHub">GitHub</a>
+      </li>
+      
+    </ul>
+  </nav>
+</header>
+
+ <router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)">
 </favorite>
 
-<like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked"></like>
+<like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked"></like> -->
 
 <!-- ngSwitch -->
-<div class="mt-16 flex flex-row gap-3">
+<!-- <div class="mt-16 flex flex-row gap-3">
   <button
     (click)="role = 'User'"
     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -23,53 +82,58 @@
   <div *ngSwitchCase="'User'">Welcome User!</div>
   <div *ngSwitchCase="'Admin'">Welcome Admin</div>
   <div *ngSwitchDefault></div>
-</div>
-
-<!-- ******ngfor -->
-
-<div class=" w-96 m-auto flex flex-col gap-1">
- <div class="flex flex-row justify-around">
-  <button
-  (click)="onAdd()"
-  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
->
-  Add new Course
-</button>
-<button
-  (click)="loadCourses()"
-  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
->
-  load Course
-</button>
  </div>
-  <ul class="bg-blue-300 text-white  mt-2 flex flex-col gap-1 items-center ">
-    <li *ngFor="let course of courses; trakBy: trakCourse" >
+
+
+  ******ngfor -->
+<!-- 
+<div class="w-96 m-auto flex flex-col gap-1">
+  <div class="flex flex-row justify-around">
+    <button
+      (click)="onAdd()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Add new Course
+    </button>
+    <button
+      (click)="loadCourses()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      load Course
+    </button>
+  </div>
+  <ul class="bg-blue-300 text-white mt-2 flex flex-col gap-1 items-center">
+    <li *ngFor="let course of courses; trakBy: trakCourse">
       {{ course.name }}
-  
+
       <button
         (click)="onRemove(course)"
-        class="bg-red-500 text-white font-bold py-1.5 px-2.5 rounded mt-5">Remove</button>
+        class="bg-red-500 text-white font-bold py-1.5 px-2.5 rounded mt-5"
+      >
+        Remove
+      </button>
     </li>
   </ul>
-</div>
+</div>  -->
+
 
 <!-- **********coustam directives*********** -->
 
-
-<input type="text" class="w-96 h-6 bg-slate-400 text-white" [appInputFormat]="'lower'"/>
-
-
-
-<!-- /////zippy component *********** -->
-
-<zippy title ="Shipping Details">
-  Shipping Details Content lore</zippy>
+<!-- <input
+  type="text"
+  class="w-96 h-6 bg-slate-400 text-white"
+  [appInputFormat]="'lower'"
+/> -->
 
 
-  <!-- /////***********template-driven form ******* -->
 
-  <contact-form></contact-form>
 
- <reactive-form></reactive-form>
- <array-form></array-form>
- <change-password></change-password>
+<!-- /////***********template-driven form ******* -->
+
+<!-- <contact-form></contact-form> -->
+
+<!-- <reactive-form></reactive-form> -->
+<!-- <array-form></array-form> -->
+<!-- <change-password></change-password> -->
+
+<!-- <http-post></http-post> -->

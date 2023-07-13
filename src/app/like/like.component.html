@@ -1,11 +1,12 @@
-
-<span  > 
-
-    <i class=" fa-heart"
+<span>
+  <i
+    class="fa-heart  text-8xl"
     [class.fa-solid]="isActive"
     [class.fa-regular]="!isActive"
-    
-    (click)="onClick()"></i>
-
+    (click)="onClick()"
+  >
+</i>
+  {{ likesCount }}
 </span>
-<span>{{likesCount}}</span>
+<!-- <span></span> -->
+<!-- <like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked"></like> -->

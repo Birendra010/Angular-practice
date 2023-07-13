@@ -1,17 +1,14 @@
 <div class="zippy">
   <div class="zippy-heading" [class.expanded]="isExpanded" (click)="onClick()">
-    {{ title }}
+    Shipping Details
 
-  
-        <i
-      class="fa-solid " 
+    <i
+      class="fa-solid"
       [ngClass]="{
         'fa-angle-down': !isExpanded,
         'fa-angle-up': isExpanded
-      }"></i>
-    
+      }"
+    ></i>
   </div>
-  <div *ngIf="isExpanded" class="zippy-body">
-    <ng-content></ng-content>
-  </div>
+  <div *ngIf="isExpanded" class="zippy-body">Shipping Details Content lore</div>
 </div>

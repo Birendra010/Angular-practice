@@ -14,7 +14,11 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ArrayFormComponent } from './array-form/array-form.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { HttpPostComponent } from './http-post/http-post.component';
-import{HttpClientModule} from '@angular/common/http'
+import{HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { GithubFollowersComponent } from './github-followers/github-followers.component'
+import { GithubFollowersService } from './services/github-followers.service';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import{HttpClientModule} from '@angular/common/http'
     ReactiveFormComponent,
     ArrayFormComponent,
     ChangePasswordComponent,
-    HttpPostComponent
+    HttpPostComponent,
+    HomeComponent,
+    GithubFollowersComponent,
+    AuthenticationComponent,
   ],
   imports: [
     HttpClientModule,
@@ -42,7 +49,8 @@ import{HttpClientModule} from '@angular/common/http'
     
     
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
