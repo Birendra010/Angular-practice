@@ -16,6 +16,9 @@ export class ReactiveFormComponent {
   registerForm = new FormGroup ({
     fname : new FormControl("",[Validators.required,Validators.maxLength(32),Validators.minLength(3)]),
     lname : new FormControl("",[Validators.required,Validators.maxLength(15)]),
+    username : new FormControl("",[Validators.required,Validators.maxLength(25)]),
+
+
     mobile : new FormControl("",[Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern(this.integerRegex)]),
     email: new FormControl("",[Validators.required,Validators.pattern(this.emailRegex)]),
     password: new FormControl("",[Validators.required ,Validators.maxLength(32),Validators.minLength(8)]) ,

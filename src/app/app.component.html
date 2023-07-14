@@ -1,8 +1,8 @@
-
 <header>
-  <nav>
-    <ul class=" flex flex-row gap-3  fs-6  h-12 text-white bg-slate-700 text-decoration-underline ">
-
+  <nav class="flex flex-row justify-between bg-slate-700">
+    <ul
+      class="flex flex-row gap-3 fs-6 h-12 text-white bg-slate-700 text-decoration-underline"
+    >
       <li class="mt-2.5">
         <a routerLink="**">Home</a>
       </li>
@@ -11,50 +11,48 @@
         <a routerLink="reactive-Form">Reactive-Form</a>
       </li>
 
-      <li  class="mt-2.5">
+      <li class="mt-2.5">
         <a routerLink="array-form">Array-Form</a>
-      </li  >
-      <li class ="mt-2.5">
+      </li>
+      <li class="mt-2.5">
         <a routerLink="contact-form">Contact-form</a>
-      </li >
-      <li  class="mt-2.5">
+      </li>
+      <li class="mt-2.5">
         <a routerLink="like">Like</a>
       </li>
-      <li  class="mt-2.5">
+      <li class="mt-2.5">
         <a routerLink="changePassword">changePassword</a>
       </li>
-      <li  class="mt-2.5">
+      <li class="mt-2.5">
         <a routerLink="favorite">Favorite</a>
       </li>
-      <li  class="mt-2.5">
+      <li class="mt-2.5">
         <a routerLink="http-post">Http</a>
       </li>
 
-      <li  class="mt-2.5">
+      <li class="mt-2.5">
         <a routerLink="zippy">Zippy</a>
       </li>
-      <li  class="mt-2.5">
+      <li class="mt-2.5">
         <a routerLink="GitHub">GitHub</a>
       </li>
-      
     </ul>
+    <div class="flex flex-row gap-3">
+      <li class="mt-2.5">
+        <button type="submit" class="btn btn-primary w-20 bg-sky-700">
+          <a routerLink="login">login</a>
+        </button>
+      </li>
+      <li class="mt-2.5">
+        <button type="submit" class="btn btn-primary w-20 bg-sky-700" (click)="logout()">
+          logout
+        </button>
+      </li>
+    </div>
   </nav>
 </header>
 
- <router-outlet></router-outlet>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<router-outlet></router-outlet>
 
 <!-- 
 <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)">
@@ -116,7 +114,6 @@
   </ul>
 </div>  -->
 
-
 <!-- **********coustam directives*********** -->
 
 <!-- <input
@@ -124,9 +121,6 @@
   class="w-96 h-6 bg-slate-400 text-white"
   [appInputFormat]="'lower'"
 /> -->
-
-
-
 
 <!-- /////***********template-driven form ******* -->
 

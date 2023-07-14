@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { GithubFollowersComponent } from './github-followers/github-followers.component'
 import { GithubFollowersService } from './services/github-followers.service';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     HomeComponent,
     GithubFollowersComponent,
     AuthenticationComponent,
+    LoginComponent,
   ],
   imports: [
     HttpClientModule,
@@ -43,13 +45,10 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     FormsModule,
     ReactiveFormsModule,
   
-    
-
-
-    
-    
   ],
   providers: [
+
+    
   ],
   bootstrap: [AppComponent]
 })

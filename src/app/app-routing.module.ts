@@ -10,6 +10,7 @@ import { HttpPostComponent } from './http-post/http-post.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { HomeComponent } from './home/home.component';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { component: ReactiveFormComponent, path: 'reactive-Form' },
@@ -21,6 +22,9 @@ const routes: Routes = [
   { component: HttpPostComponent, path: 'http-post' },
   { component: ZippyComponent, path: 'zippy' },
   { component: GithubFollowersComponent, path: 'GitHub' },
+  { component: LoginComponent, path: 'login' },
+  
+
 
   { component:HomeComponent , path: '**' },
 

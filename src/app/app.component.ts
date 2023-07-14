@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { favoriteChangedEventArgs } from './favorite/favorite.component';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,11 @@ import { favoriteChangedEventArgs } from './favorite/favorite.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+constructor(private userService:UserService){}
+
+
+
 [x: string]: any;
   title = 'Angular-practice';
 
@@ -56,6 +62,8 @@ loadCourses(){
 trakCourse(course: { id: any; }){
   return course ? course.id:undefined
 }
-
+logout() {
+   localStorage.removeItem('currentUser');
+ }
   
 }
