@@ -20,6 +20,7 @@ import { GithubFollowersComponent } from './github-followers/github-followers.co
 import { GithubFollowersService } from './services/github-followers.service';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { LoginComponent } from './login/login.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -44,6 +45,8 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    
   
   ],
   providers: [
